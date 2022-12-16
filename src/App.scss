@@ -1,0 +1,9 @@
+@import "./scss/style.scss";
+
+nav .active {
+    background-color: red !important;
+}
+
+.cap-first:first-letter {
+    text-transform: capitalize;
+}

@@ -1,0 +1,39 @@
+// --- SASS VARIABLES ---
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif|Merriweather&display=swap');
+$font-main: 'Merriweather', serif;
+$font-hightlight: 'Bree Serif', serif;
+
+// https://coolors.co/ff5e5b-d8d8d8-ffffea-00cecb-ffed66
+/* SCSS HSL */
+$col_orange-red-crayola: hsla(1, 100%, 68%, 1);
+$col_gainsboro: hsla(0, 0%, 85%, 1);
+$col_ivory: hsla(60, 100%, 96%, 1);
+$col_middle-blue-green: hsla(173, 68%, 70%, 1);
+$col_robin-egg-blue: hsla(179, 100%, 40%, 1);
+$col_corn: hsla(53, 100%, 70%, 1);
+$col_granny-smith-apple: hsla(136, 59%, 69%, 1);
+$col_tester: hsla(0, 100%, 50%, 1);
+
+$col_dark: hsla(0, 0%, 10%, 1);
+$col_light: hsl(180, 78%, 96%, 1);
+$col_light-gray: hsla(180, 10%, 80%, 1);
+$col_dark-gray: hsla(180, 10%, 20%, 1);
+
+// Color functions
+$col_success: hsl(158, 95%, 34%);
+$col_default: hsl(147, 95%, 41%);
+$col_info: hsl(251, 43%, 19%);
+$col_warning: hsl(158, 95%, 34%);
+$col_danger: hsl(158, 95%, 34%);
+
+// Max-width
+$max_width: 1200px;
+
+// Space
+$space_header: 20px;
+$space_div: 40px 20px;
+
+// Misc
+$brd_main: 1px dotted $col_robin-egg-blue;

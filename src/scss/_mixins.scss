@@ -1,0 +1,113 @@
+@import './variables';
+
+
+//  --------- CUSTOM CONTAINER
+// ---------------------------------------------------------------------------
+// https://getbootstrap.com/docs/5.1/layout/containers/#sass
+// Ex på custom container - tilpasset lidt - Måske skal denne hentes fra BS egen mixin og placeres under import af bs - som ved media (se hero-box)
+@mixin make-container($width) {
+	width: $width;
+	padding-right: 0;
+	padding-left: 0;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+// Laver et baggrundsbillede med overlay af en svag grå gradient
+// ---------------------------------------------------------------------------
+@mixin backImage($image, $height: 100vh) {
+    height: $height;
+    //background-image: url("../Content/img/water.jpg");
+    $img: "../Content/img/" + $image;
+    background-image: linear-gradient(to bottom, rgba(0,0,0,.1), rgba(0,0,0,.6)), url($img);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+
+
+// Tilpas "grid" med images som tilpasser sig automatisk i width
+// ---------------------------------------------------------------------------
+@mixin imagegrid($qty, $margin) {
+    //width: 100% - (($qty - 1) * $margin ) / $qty;
+    width: (100% - (($qty - 1) * $margin )) / $qty;
+
+    &:nth-child(n) {
+        margin-right: $margin;
+        margin-bottom: $margin;
+    }
+
+    &:nth-child(#{$qty}n) {
+        margin-right: 0;
+        margin-bottom: 0;
+    }
+}
+
+
+// BREAK
+// ---------------------------------------------------------------------------
+@mixin break($args...) {
+    @if length($args) == 1 {
+        @media(min-width: nth( $args, 1)) {
+            @content;
+        }
+    }
+    @if length($args) == 2 {
+        @media(min-width: nth( $args, 1)) and (max-width: nth($args, 2)) {
+            @content;
+        }
+    }
+}
+
+// GRADIENT 
+// fx @include background-gradient($col_blue, $col_offwhite, 'vertical');
+// ---------------------------------------------------------------------------
+@mixin background-gradient($start-color, $end-color, $orientation) { 
+
+    background: $start-color;
+
+    background: linear-gradient(to bottom, $start-color, $end-color);
+
+    @if $orientation == 'vertical' {
+      background: -webkit-linear-gradient(top, $start-color, $end-color);
+      background: linear-gradient(to bottom, $start-color, $end-color);
+    } @else if $orientation == 'horizontal' {
+      background: -webkit-linear-gradient(left, $start-color, $end-color);
+      background: linear-gradient(to right, $start-color, $end-color);
+    } @else {
+      background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+      background: radial-gradient(ellipse at center, $start-color, $end-color);
+    }
+}
+
+
+// TRANSITION - https://www.w3schools.com/css/css3_transitions.asp
+// fx på et element
+// color: $col_background;
+// @include transition(color, .8s, ease); 
+// og så &:hover {color: $col_yellow;}
+// ---------------------------------------------------------------------------
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+
+
+
+// CLEARFIX - til brug ved float
+// ---------------------------------------------------------------------------
+@mixin clearfix {
+    &:before, &:after {
+        content: '';
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}

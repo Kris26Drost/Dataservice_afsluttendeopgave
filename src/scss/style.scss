@@ -1,0 +1,31 @@
+@import './bscustomizing';
+
+
+// Font
+$f_main: Arial, Helvetica, sans-serif;
+$f_head: "Spinnaker", Helvetica, sans-serif;
+
+body {
+	margin: 0;
+	font-family: $f_head;
+}
+
+.img-cover {
+	width: 100%;
+	object-fit: cover;
+	// overflow: hidden;
+	background-color: yellow;
+}
+.Services {
+	background-color: rgb(109, 173, 33) !important;
+}
+
+.title-service {
+	color: rgb(124, 181, 58) !important;;
+}
+
+.border,
+.btn {
+	border-color: rgb(124, 181, 58) !important;
+}
+

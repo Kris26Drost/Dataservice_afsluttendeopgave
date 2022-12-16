@@ -1,0 +1,33 @@
+@import './mixins';
+@import './variables';
+
+
+// Custom BS col var
+$primary: $col_danger;
+$secondary: $col_default;
+
+// custom containers
+.custom-container {
+	@include make-container(960px);
+}
+
+.custom-container2 {
+	@include make-container(1100px);
+}
+
+
+// --------- BOOTSTRAP SASS HER ----------------------
+// ---------------------------------------------------
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Spinnaker&display=swap");
+
+
+//  --------- Ekstra class til breakpoint
+// Sultry og Elegant-tekster på lille skærm <576 ... https://getbootstrap.com/docs/5.0/layout/breakpoints/#max-width
+@include media-breakpoint-down(sm) {
+	.hero-box {
+		min-height: 300px;
+	}
+}
